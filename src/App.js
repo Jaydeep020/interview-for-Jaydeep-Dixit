@@ -20,7 +20,6 @@ export default function App() {
       const filter = {};
       const now = new Date();
       let startDate;
-
       switch (dateFilter) {
         case "Past week":
           startDate = new Date(now.setDate(now.getDate() - 7));
@@ -45,7 +44,7 @@ export default function App() {
       }
 
       if (startDate) {
-        filter.date_utc = { $gte: startDate.toISOString(),$lte: now.toISOString() };
+        filter.date_utc = { $gte: startDate.toISOString(),$lte: new Date().toISOString() };
       }
 
       if (status === "Successful Launches") filter["success"] = true;

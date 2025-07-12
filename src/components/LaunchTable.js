@@ -1,7 +1,7 @@
 export default function LaunchTable({ launches, loading, onSelect }) {
   return (
-    <div className="overflow-x-auto border border-gray-300 dark:border-slate-700 rounded-lg my-4">
-      <table className="min-w-full table-fixed">
+    <div className="overflow-x-auto border border-gray-300 dark:border-slate-700 rounded-lg my-4 min-h-full">
+      <table className="min-w-full table-fixed min-h-full">
         <thead className="bg-gray-100 dark:bg-slate-800 text-left text-sm">
           <tr >
             <th className="p-3">No</th>

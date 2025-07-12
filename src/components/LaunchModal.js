@@ -1,5 +1,9 @@
 export default function LaunchModal({ launch, onClose }) {
   console.log(launch);
+    let desc;
+  if(launch.details){
+    desc = launch.details.length>100 ?(launch.details.substring(0,100))+"...":(launch.details) ;
+  }
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white dark:bg-slate-800 text-gray-900 dark:text-white max-w-lg w-full p-6 rounded shadow-lg relative">
@@ -25,7 +29,7 @@ export default function LaunchModal({ launch, onClose }) {
           <button onClick={onClose} className="absolute top-2 right-3 text-2xl">×</button>
         </div>
         <div>
-            <span className="mb-4">{launch.details || "No details available."}</span>
+            <span className="mb-4">{ desc|| "No details available."}</span>
             {launch.links.wikipedia && (
               <a
                 href={launch.links.wikipedia}
